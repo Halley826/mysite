@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+{% if not user.is_authenticated %}
+    <script type="text/javascript">
+        alert("请登录！");
+        window.location.href = "/usermng/index";
+    </script>
+{% endif %}
+欢迎，这是本项目的第一个界面。
+<br>
+
+username:{{ username }}
+<br>
+password:{{ password }}
+<br>
+test:{{ test }}
+<div>
+    <a href="{% url 'usermng:user_logout' %}">退出登陆</a>
+</div>
+<div>
+    <a href={% url 'usermng:register' %}>修改密码</a>
+</div>
+<div>
+    <a href="{% url 'usermng:delete' %}">&nbsp;&nbsp;&nbsp;注销账号&nbsp;&nbsp;</a>
+</div>
+</body>
+</html>
