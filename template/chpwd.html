@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码</title>
+</head>
+<body>
+{% if state %}
+    <script type="text/javascript">
+    alert("密码修改成功,请登陆");
+    window.location.href="/usermng/index"
+    </script>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <input type="password" placeholder="请输入原密码" name="password">
+    <br>
+    <input type="password" placeholder="请输入新的密码" name="password2">
+    <br>
+    <input type="password" placeholder="请再次输入新的密码" name="password3">
+    <br>
+    <input type="submit" value="提交" name="change">
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function displayDate1(){
+            document.getElementById("time").innerHTML=Date();
+        }
+    </script>
+</head>
+<body>
+<p id="time">这里将要显示时间</p>
+<button type="button" onclick="displayDate1()">显示时间</button>
+
+<script src="{% static 'js/test.js' %}" type="text/javascript"></script>
+
+<a href="JavaScript:alert('运行js脚本')">使用js脚本</a>
+</body>
+</html>

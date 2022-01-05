@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <link rel="stylesheet" href="../static/css/welcome.css">
 </head>
 <body>
 {% if not user.is_authenticated %}
@@ -18,15 +19,14 @@ username:{{ username }}
 <br>
 password:{{ password }}
 <br>
-test:{{ test }}
 <div>
-    <a href="{% url 'usermng:user_logout' %}">退出登陆</a>
+    <a href="{% url 'usermng:user_logout' %}" class="important">退出登陆</a>
 </div>
 <div>
-    <a href={% url 'usermng:register' %}>修改密码</a>
+    <a href="{% url 'usermng:chpwd' %}" class="important">修改密码</a>
 </div>
 <div>
-    <a href="{% url 'usermng:delete' %}">&nbsp;&nbsp;&nbsp;注销账号&nbsp;&nbsp;</a>
+    <a href="{% url 'usermng:delete' %}" class="important">注销账号</a>
 </div>
 </body>
 </html>

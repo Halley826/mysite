@@ -1,21 +1,35 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
 <body>
+<script>
+    function displayDate(){
+        document.getElementById("time").innerHTML=Date;
+    }
+</script>
 {% if error_message %}
 <script type="text/javascript">
 alert("{{ error_message }}");
 window.location.href='/usermng/index';
 </script>
 {% endif %}
+<p id="time">这里将要显示时间</p>
+<button type="button" onclick="displayDate()">显示日期</button>
 <form method="post">{% csrf_token %}
     <input type="text" name="username" placeholder="请输入用户名"><br>
     <input type="password" name="password" placeholder="请输入密码"><br>
     <input type="submit" value="登陆">
 </form>
 
+<ul class="blue_halley">
+    <li>python</li>
+    <li>java-w</li>
+    <img src="{% static 'pic/hello.jpeg' %}" alt="如果无法显示图像，将会显示这里的文字">
+</ul>
 </body>
 </html>

@@ -13,5 +13,10 @@ urlpatterns=[
     path('index',views.index,name='index'),
     path('user_logout',views.index,name='user_logout'),
     path('register',views.register,name='register'),
-    path('delete',views.delete,name='delete')
+    path('delete',views.delete,name='delete'),
+    path("chpwd",views.chpwd,name='chpwd'),
+    path("",views.test,name='test'),
+    path("file",views.file_download,name='file_download'),
+    path("big_file_download",views.big_file_download,name='big_file_download'),
+    path("honeproc2",views.honeproc2,name='honeproc2')
 ]
